@@ -1,6 +1,6 @@
 # e2e-test-setup
 
-For our e2e tests on GitHub actions, we are using [KIND](https://kind.sigs.k8s.io) (Kubernetes IN Docker). This create a single master and 2 worker node cluster using only Docker.
+For our e2e tests on GitHub actions, we are using [KIND](https://kind.sigs.k8s.io) (Kubernetes IN Docker). This creates a single master and 2 worker node cluster using only Docker.
 
 ## Install KIND
 
