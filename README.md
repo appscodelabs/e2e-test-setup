@@ -27,6 +27,5 @@ kind delete cluster
 ```
 
 ## How to pass cloud credentials to e2e tests in GitHub actions
-https://youtu.be/8QtXBaGY9q4
 
 [![How to pass cloud credentials to e2e tests in GitHub actions](https://img.youtube.com/vi/8QtXBaGY9q4/0.jpg)](https://www.youtube-nocookie.com/embed/8QtXBaGY9q4)
