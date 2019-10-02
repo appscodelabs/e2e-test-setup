@@ -25,3 +25,6 @@ curl -fsSL https://github.com/appscodelabs/e2e-test-setup/raw/master/run.sh | ba
 ```console
 kind delete cluster
 ```
+
+## How to pass cloud credentials to e2e tests in GitHub actions
+https://youtu.be/8QtXBaGY9q4
