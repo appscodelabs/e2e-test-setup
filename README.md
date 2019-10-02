@@ -10,7 +10,8 @@ You only need to do this once.
 curl -LO https://github.com/kubernetes-sigs/kind/releases/download/v0.5.1/kind-$(uname)-amd64 \
   && sudo install kind-$(uname)-amd64 /usr/local/bin/kind
 
-mkdir /mnt
+# this directory is used to provision hostpath PVCs
+mkdir -p /mnt
 ```
 
 ## Create a Cluster matching our e2e setup
