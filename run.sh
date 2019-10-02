@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -xeou pipefail
+set -eou pipefail
 
 SCRIPT_ROOT=${SCRIPT_ROOT:-https://github.com/appscodelabs/e2e-test-setup/raw/master}
 
