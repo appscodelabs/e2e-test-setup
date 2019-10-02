@@ -4,7 +4,15 @@ set -xeou pipefail
 
 SCRIPT_ROOT=${SCRIPT_ROOT:-https://github.com/appscodelabs/e2e-test-setup/raw/master}
 
-kind create cluster --config ${SCRIPT_ROOT}/kubernetes/kind.yaml --name kind --wait 300s
+configfile=$(mktemp /tmp/kind-config.XXXXXX)
+curl -fsSL ${SCRIPT_ROOT}/kubernetes/kind.yaml > $configfile
+
+function cleanup() {
+  rm -rf $configfile
+}
+trap cleanup EXIT
+
+kind create cluster --config $configfile --name kind --wait 300s
 export KUBECONFIG="$(kind get kubeconfig-path)"
 echo
 echo "waiting for nodes to be ready ..."
