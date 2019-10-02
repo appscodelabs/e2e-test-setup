@@ -4,7 +4,7 @@ set -xeou pipefail
 
 SCRIPT_ROOT=${SCRIPT_ROOT:-https://github.com/appscodelabs/e2e-test-setup/raw/master}
 
-configfile=$(mktemp /tmp/kind-config.XXXXXX)
+configfile=$(mktemp /tmp/kind.XXXXXX.yaml)
 curl -fsSL ${SCRIPT_ROOT}/kubernetes/kind.yaml > $configfile
 
 function cleanup() {
