@@ -1,3 +1,7 @@
+#!/bin/bash
+
+set -eou pipefail
+
 SCRIPT_ROOT=${SCRIPT_ROOT:-https://github.com/appscodelabs/e2e-test-setup/raw/master}
 
 kind create cluster -f ${SCRIPT_ROOT}/kubernetes/kind.yaml
