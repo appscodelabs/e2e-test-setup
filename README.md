@@ -25,7 +25,7 @@ curl -fsSL https://github.com/appscodelabs/e2e-test-setup/raw/master/run.sh | ba
 Unlike minikube, KIND does not automatically configure `kubectl` to use the kind cluster. You need to run the following command in your terminal to configure `kubectl` to use the kind cluster.
 
 ```console
-export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
+export KUBECONFIG="$(kind get kubeconfig-path)"
 ```
 
 
