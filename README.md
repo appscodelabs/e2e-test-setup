@@ -39,6 +39,10 @@ kind delete cluster
 
 [![How to pass cloud credentials to e2e tests in GitHub actions](https://img.youtube.com/vi/8QtXBaGY9q4/0.jpg)](https://www.youtube-nocookie.com/embed/8QtXBaGY9q4)
 
+## How to add e2e tests to a new project
+
+[![How to add e2e tests to a new project](https://img.youtube.com/vi/WSmj8uNhaCU/0.jpg)](https://www.youtube-nocookie.com/embed/WSmj8uNhaCU)
+
 ## Using both KIND and Minikube cluster in e2e tests
 
 Code Sample:
