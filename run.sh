@@ -2,6 +2,9 @@
 
 set -eou pipefail
 
+# for example, export KIND_IMAGE=kindest/node:v1.16.2
+# leave it empty for default
+KIND_IMAGE=${KIND_IMAGE:-}
 SCRIPT_ROOT=${SCRIPT_ROOT:-https://github.com/appscodelabs/e2e-test-setup/raw/master}
 
 configfile=$(mktemp /tmp/kind.XXXXXX.yaml)
@@ -12,7 +15,7 @@ function cleanup() {
 }
 trap cleanup EXIT
 
-kind create cluster --config $configfile --name kind --wait 300s
+kind create cluster --config $configfile --name kind --image=$KIND_IMAGE --wait 300s
 export KUBECONFIG="$(kind get kubeconfig-path)"
 echo
 echo "waiting for nodes to be ready ..."
