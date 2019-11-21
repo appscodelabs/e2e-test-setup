@@ -22,6 +22,15 @@ echo "waiting for nodes to be ready ..."
 kubectl wait --for=condition=Ready nodes --all --timeout=5m
 kubectl get nodes
 echo
+echo "Installing NFS server dependencies ..."
+nodes=($(kubectl get nodes -o=jsonpath='{range .items[*]}{.metadata.name}{"\t"}{end}'))
+for i in "${nodes[@]}"
+do
+  echo "Installing NFS server dependencies in node: $i ...."
+  docker exec $i apt-get update
+  docker exec $i apt-get install -y nfs-kernel-server
+done
+echo
 echo "installing local-path provisioner ..."
 kubectl delete storageclass --all
 kubectl apply -f https://github.com/rancher/local-path-provisioner/raw/v0.0.11/deploy/local-path-storage.yaml
