@@ -23,8 +23,8 @@ kubectl wait --for=condition=Ready nodes --all --timeout=5m
 kubectl get nodes
 echo
 echo "Installing NFS server dependencies ..."
-nodes=($(kubectl get nodes -o=jsonpath='{range .items[*]}{.metadata.name}{"\t"}{end}'))
-for i in "${nodes[@]}"
+nodes=$(kubectl get nodes -o=jsonpath='{range .items[*]}{.metadata.name}{"\t"}{end}')
+for i in $nodes
 do
   echo "Installing NFS server dependencies in node: $i ...."
   docker exec $i apt-get update
