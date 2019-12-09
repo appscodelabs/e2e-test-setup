@@ -5,7 +5,7 @@ set -eou pipefail
 # for example, export KIND_IMAGE=kindest/node:v1.16.2
 # leave it empty for default
 KIND_IMAGE=${KIND_IMAGE:-}
-SCRIPT_ROOT=${SCRIPT_ROOT:-https://github.com/appscodelabs/e2e-test-setup/raw/master}
+SCRIPT_ROOT=${SCRIPT_ROOT:-https://github.com/appscodelabs/e2e-test-setup/raw/kind-v0.6.1}
 
 configfile=$(mktemp /tmp/kind.XXXXXX.yaml)
 curl -fsSL ${SCRIPT_ROOT}/kubernetes/kind.yaml > $configfile
